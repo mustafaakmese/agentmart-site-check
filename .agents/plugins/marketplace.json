@@ -1,0 +1,20 @@
+{
+  "name": "agentmart-site-check",
+  "interface": {
+    "displayName": "AgentMart Site Check"
+  },
+  "plugins": [
+    {
+      "name": "agentmart-site-check",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

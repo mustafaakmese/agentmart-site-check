@@ -1,0 +1,28 @@
+{
+  "name": "agentmart-site-check",
+  "displayName": "AgentMart Site Check",
+  "version": "1.0.0",
+  "description": "Checks a website's public setup from the outside (HTTPS and security headers, certificate dates, SPF and DMARC, privacy, terms and contact pages, llms.txt, robots.txt and MCP) through a read-only remote MCP server with no sign-in, and returns plain steps to fix each item.",
+  "author": {
+    "name": "Ciphyr Tech OÜ",
+    "email": "support@ciphyr.ai",
+    "url": "https://agentmart.ciphyr.ai"
+  },
+  "homepage": "https://agentmart.ciphyr.ai/c",
+  "repository": "https://github.com/mustafaakmese/agentmart-site-check",
+  "license": "MIT",
+  "keywords": [
+    "website-check",
+    "security-headers",
+    "https",
+    "spf",
+    "dmarc",
+    "llms-txt",
+    "mcp"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://agentmart.ciphyr.ai/c",
+  "supportUrl": "https://agentmart.ciphyr.ai/support",
+  "privacyPolicyUrl": "https://agentmart.ciphyr.ai/privacy",
+  "termsOfServiceUrl": "https://agentmart.ciphyr.ai/terms"
+}

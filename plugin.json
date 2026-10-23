@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agentmart-site-check",
+  "version": "1.0.0",
+  "description": "Checks a website's public setup from the outside (HTTPS and security headers, certificate dates, SPF and DMARC, privacy, terms and contact pages, llms.txt, robots.txt and MCP) through a read-only remote MCP server with no sign-in, and returns plain steps to fix each item.",
+  "author": {
+    "name": "Ciphyr Tech OÜ",
+    "email": "support@ciphyr.ai",
+    "url": "https://agentmart.ciphyr.ai"
+  },
+  "homepage": "https://agentmart.ciphyr.ai/c",
+  "repository": "https://github.com/mustafaakmese/agentmart-site-check",
+  "license": "MIT",
+  "keywords": [
+    "website-check",
+    "security-headers",
+    "https",
+    "spf",
+    "dmarc",
+    "llms-txt",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AgentMart Site Check",
+        "shortDescription": "Check a website's public setup",
+        "longDescription": "AgentMart Site Check reads the public setup of a website, the way any visitor or AI agent sees it from the outside. Give it a domain such as example.com. It checks HTTPS and security headers, certificate dates, email sender records (SPF and DMARC), whether privacy, terms and contact pages can be found, and files for AI agents (llms.txt, robots.txt and MCP). Each item comes back as pass, warn, fail or not checked, with plain steps to fix it.\n\nHow it reads: at most 24 requests to the site per check, one of them over plain http to see whether the site moves visitors to HTTPS, plus public DNS questions. If the site names an MCP server, the check sends it the standard MCP opening messages, asks for its list of tools and ends the session. It follows the site's robots.txt rules for AgentMart-Check. It never logs in, fills in forms or changes anything.\n\nWhat it returns: our own fixed wording and numbers. No text from the checked site is copied into a result. A result is kept for 7 days and can be shown again by its check_id. A repeat for the same domain within 15 minutes gives the same result, unless you ask for a fresh check.\n\nLimits: a result describes that moment only. It is not a security audit, and it says nothing about the company's servers, code, staff or how it handles data.\n\nNo account and no sign-in. Site owners can stop checks of their domain with a DNS TXT record agentmart-check=no on _agentmart-check.<their domain>, or by writing to us.\n\nMade by Ciphyr Tech OÜ (Estonia), the company that runs AgentMart.",
+        "developerName": "Ciphyr Tech OÜ",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Check HTTPS, headers and certificate dates",
+          "Check SPF and DMARC records",
+          "Find privacy, terms and contact pages",
+          "Check llms.txt, robots.txt and MCP",
+          "Show an earlier result by its check_id"
+        ],
+        "websiteURL": "https://agentmart.ciphyr.ai/c",
+        "privacyPolicyURL": "https://agentmart.ciphyr.ai/privacy",
+        "termsOfServiceURL": "https://agentmart.ciphyr.ai/terms",
+        "defaultPrompt": [
+          "Check example.com with AgentMart Site Check.",
+          "Does my domain have SPF and DMARC records?",
+          "When does the HTTPS certificate of my website expire?"
+        ],
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}
