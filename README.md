@@ -12,7 +12,7 @@ plain steps to fix:
 - files for AI agents: llms.txt, robots.txt, MCP discovery files, and whether the site's MCP server answers and
   labels its tools
 
-It is a small plugin with one skill and one remote MCP server. The server is read-only and needs no account and
+It is a small plugin with one skill and one remote MCP server. The server changes nothing on the sites it checks and needs no account and
 no sign-in. It is made by Ciphyr Tech OÜ (Estonia), the company that runs AgentMart, and it runs on our servers.
 
 ## Use it
@@ -57,14 +57,14 @@ connector: https://claude.ai/directory/connectors/agentmart-site-check
 
 - No code runs on your machine: no hooks, no scripts, no commands, no binaries, and no files that change your
   settings or rules.
-- One remote MCP server, `https://agentmart.ciphyr.ai/mcp/check`, with two read-only tools: `run_check` and
+- One remote MCP server, `https://agentmart.ciphyr.ai/mcp/check`, with two tools: `run_check` and
   `get_check_result`. Your app talks to it directly over HTTPS.
 - What your agent sends to it: the domain to check, and an MCP address on that domain if you give one.
 - What the server then reads: that site's public pages, headers and files, with at most 24 ordinary requests
   per check (one of them over plain http, to see whether the site moves visitors to HTTPS), and public DNS
   records. If the site names an MCP server, the check sends it the standard MCP opening messages, asks for its
   list of tools and ends the session. Its requests name themselves AgentMart-Check and follow the site's
-  robots.txt rules for AgentMart-Check. It never logs in, fills in forms or changes anything.
+  robots.txt rules for AgentMart-Check. It never logs in, fills in forms or changes anything on the site.
 - What it keeps: the domain, the time and the result, for 7 days, so a result can be shown again by its
   check_id. A result is our own fixed wording and numbers; no text from the checked site is copied into it. For
   rate limits, request counters hold the caller's IP address for a short time. Details:

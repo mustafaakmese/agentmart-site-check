@@ -1,8 +1,8 @@
 {
   "name": "agentmart-site-check",
   "displayName": "AgentMart Site Check",
-  "version": "1.0.0",
-  "description": "Checks a website's public setup from the outside (HTTPS and security headers, certificate dates, SPF and DMARC, privacy, terms and contact pages, llms.txt, robots.txt and MCP) through a read-only remote MCP server with no sign-in, and returns plain steps to fix each item.",
+  "version": "1.0.1",
+  "description": "Checks a website's public setup from the outside (HTTPS and security headers, certificate dates, SPF and DMARC, privacy, terms and contact pages, llms.txt, robots.txt and MCP) through a remote MCP server that changes nothing on the sites it checks, with no sign-in, and returns plain steps to fix each item.",
   "author": {
     "name": "Ciphyr Tech OÜ",
     "email": "support@ciphyr.ai",

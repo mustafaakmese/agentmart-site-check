@@ -1,12 +1,12 @@
 ---
 name: check-website-setup
-description: Use when the user wants the public setup of a website or domain checked from the outside, for example whether it serves HTTPS and moves http visitors to HTTPS, its security headers, when its HTTPS certificate expires, its email sender records (SPF and DMARC), whether privacy, terms and contact pages can be found, or its files for AI agents (llms.txt, robots.txt, MCP discovery, and whether its MCP server answers and labels its tools). Uses the read-only run_check and get_check_result tools of the AgentMart Site Check MCP server, which need no sign-in. Not a security audit, and not for testing logins, finding vulnerabilities or checking many domains in bulk.
+description: Use when the user wants the public setup of a website or domain checked from the outside, for example whether it serves HTTPS and moves http visitors to HTTPS, its security headers, when its HTTPS certificate expires, its email sender records (SPF and DMARC), whether privacy, terms and contact pages can be found, or its files for AI agents (llms.txt, robots.txt, MCP discovery, and whether its MCP server answers and labels its tools). Uses the run_check and get_check_result tools of the AgentMart Site Check MCP server, which need no sign-in. Not a security audit, and not for testing logins, finding vulnerabilities or checking many domains in bulk.
 ---
 
 # Check a website's public setup
 
 This plugin connects the AgentMart Site Check MCP server (https://agentmart.ciphyr.ai/mcp/check). It has two
-read-only tools and needs no account and no sign-in:
+tools, changes nothing on the sites it checks and needs no account and no sign-in:
 
 - `run_check` ("Check a website's public setup") checks one domain. Within 15 minutes of an earlier check of the
   same domain and MCP address it gives that stored result, unless `fresh` is true.
@@ -14,7 +14,7 @@ read-only tools and needs no account and no sign-in:
 
 A check reads only what any visitor can see: at most 24 ordinary requests to the site (one of them over plain
 http), public DNS questions, and, if the site names an MCP server, the standard MCP opening messages and a request
-for its list of tools. It never logs in, fills in forms or changes anything.
+for its list of tools. It never logs in, fills in forms or changes anything on the site.
 
 ## When to use it
 

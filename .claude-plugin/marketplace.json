@@ -1,6 +1,6 @@
 {
   "name": "agentmart-site-check",
-  "description": "AgentMart Site Check: one plugin that checks a website's public setup through a read-only MCP server with no sign-in.",
+  "description": "AgentMart Site Check: one plugin that checks a website's public setup through an MCP server that changes nothing on the sites it checks, with no sign-in.",
   "owner": {
     "name": "Ciphyr Tech OÜ",
     "email": "support@ciphyr.ai"
@@ -9,7 +9,7 @@
     {
       "name": "agentmart-site-check",
       "source": "./",
-      "description": "Checks a website's public setup from the outside (HTTPS and security headers, certificate dates, SPF and DMARC, privacy, terms and contact pages, llms.txt, robots.txt and MCP) through a read-only remote MCP server with no sign-in, and returns plain steps to fix each item."
+      "description": "Checks a website's public setup from the outside (HTTPS and security headers, certificate dates, SPF and DMARC, privacy, terms and contact pages, llms.txt, robots.txt and MCP) through a remote MCP server that changes nothing on the sites it checks, with no sign-in, and returns plain steps to fix each item."
     }
   ]
 }

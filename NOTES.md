@@ -72,6 +72,16 @@ plugin and its connector, so people who have both see one set of tools.
 - Codex: `codex plugin marketplace add` with an entry path of `./`, and how it shows the PNG logo.
 - Claude's directory: the portal's Validate step and its security scan.
 
+## Version 1.0.1 (30 October 2026)
+
+- The server's `run_check` tool is no longer labelled read-only: it keeps each result for 7 days so that
+  `get_check_result` can show it again, and OpenAI's guidelines count a tool that saves a result as not read-only.
+  It is still labelled not destructive and changes nothing on the sites it checks. `get_check_result` stays
+  read-only.
+- So the words "read-only" left the manifests, the marketplace file, the skill, README.md and SECURITY.md; they now
+  say the server changes nothing on the sites it checks. Nothing else changed: the same server address, tools, skill
+  name, instructions and limits.
+
 ## Releasing a new version
 
 Raise `version` in `.claude-plugin/plugin.json` and `plugin.json` together (Claude Code keeps users on a version

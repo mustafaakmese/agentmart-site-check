@@ -2,7 +2,8 @@
 
 This repository holds manifests, one skill (Markdown), documents and a logo. It runs no code on your machine:
 no hooks, no scripts, no commands, no binaries. The one server it names is
-`https://agentmart.ciphyr.ai/mcp/check`, reached over HTTPS with no sign-in. Its two tools only read.
+`https://agentmart.ciphyr.ai/mcp/check`, reached over HTTPS with no sign-in. Its two tools change nothing on the sites it checks; it keeps
+each result for 7 days.
 
 ## Reporting a problem
 
